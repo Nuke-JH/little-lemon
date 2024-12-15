@@ -44,7 +44,7 @@ h3 {
   list-style-position: inside;
 }
 
-.button {
+/* .button {
   font-family: "Markazi Text";
   font-size: 24pt;
   color: #ffffff;
@@ -52,7 +52,7 @@ h3 {
   min-width: 250px;
   background-color: #495e57;
   border-radius: 16px;
-}
+} */
 
 label {
   font-family: "Markazi Text";
@@ -65,24 +65,19 @@ select {
   font-family: "Markazi Text";
   font-size: 24pt;
   color: #000000;
+  height: 66px;
   text-align: center;
   border-radius: 16px;
 }
 
-div.time-selection {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 45px 45px;
-}
-
-form.reservation {
+.reservation {
   display: grid;
   grid-template-columns: 200px 600px;
   grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
   gap: 0px 25px;
   /* align-items: center; */
-  margin-right: 40px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 form select {

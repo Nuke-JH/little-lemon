@@ -1,0 +1,82 @@
+.defaultButtonStyle {
+  font-family: "Markazi Text";
+  font-size: 24pt;
+  color: #ffffff;
+  border-radius: 16px;
+  min-height: 70px;
+  min-width: 250px;
+  margin-left: 45px;
+  margin-right: 45px;
+  background-color: #495e57;
+}
+
+.hoverButtonStyle {
+  font-family: "Markazi Text";
+  font-size: 24pt;
+  color: #ffffff;
+  border-radius: 16px;
+  min-height: 70px;
+  min-width: 250px;
+  margin-left: 45px;
+  margin-right: 45px;
+  background-color: #333333;
+  cursor: pointer;
+}
+
+.active {
+  font-family: "Markazi Text";
+  font-size: 24pt;
+  border-radius: 16px;
+  min-height: 70px;
+  min-width: 250px;
+  color: #000000;
+  margin-left: 45px;
+  margin-right: 45px;
+  background-color: #f4ce14;
+}
+
+.buttonGroup {
+  /*this is for the <ul> entries*/
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 0px 45px;
+  flex-grow: 1;
+  margin-left: 45px;
+  margin-right: 45px;
+  justify-content: flex-start;
+}
+
+.time-selection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 45px 0px;
+  padding: 45px;
+
+  background-color: #333333;
+}
+
+/* .center-column {
+  display: flex;
+  width: 80%;
+  line-height: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+.disabledButtonStyle {
+  font-family: "Markazi Text";
+  font-size: 24pt;
+  color: #ffffff;
+  border-radius: 16px;
+  min-height: 70px;
+  min-width: 250px;
+  margin-left: 45px;
+  margin-right: 45px;
+  background-color: #333333;
+  cursor: not-allowed;
+}

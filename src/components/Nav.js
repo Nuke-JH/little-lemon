@@ -9,7 +9,7 @@ function Nav() {
     <nav className="main-nav" style={{ display: "flex" }}>
       <div className="side-margin" style={{ width: "10%" }} />
       <div
-        clasName="center-column"
+        className="center-column"
         style={{
           display: "flex",
           width: "80%",
