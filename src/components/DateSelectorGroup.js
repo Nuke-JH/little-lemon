@@ -26,6 +26,7 @@ const DateButtonGroup = ({ buttons, action, buttonType, valueName }) => {
           onMouseEnter={(event) => handleMouseEnter(event, i)}
           onMouseLeave={(event) => handleMouseLeave(event, i)}
           onClick={(event) => handleClick(event, i)}
+          aria-label="On Click"
           className={
             i === clickedId
               ? "active"
