@@ -172,3 +172,24 @@ export const availableReservations = [
     ],
   ],
 ];
+
+export const dates = ["Today", "Tomorrow", "Future Date"];
+export const locations = ["Inside", "Outside", "Either"];
+export const times = [
+  "4:00 pm",
+  "4:15 pm",
+  "4:30 pm",
+  "4:45 pm",
+  "5:00 pm",
+  "5:15 pm",
+  "5:30 pm",
+  "5:45 pm",
+  "6:00 pm",
+  "6:15 pm",
+  "6:30 pm",
+  "6:45 pm",
+  "7:00 pm",
+  "7:15 pm",
+  "7:30 pm",
+  "7:45 pm",
+];

@@ -2,12 +2,12 @@ import React from "react";
 import { useState } from "react";
 import "./button.css";
 
-const DateButtonGroup = ({ buttons, action, buttonType }) => {
+const DateButtonGroup = ({ buttons, action, buttonType, valueName }) => {
   const [clickedId, setClickedId] = useState(null);
   const [mouseOver, setMouseOver] = useState(null);
   const handleClick = (event, id) => {
     setClickedId(id);
-    action(id);
+    action(event, id);
   };
   const handleMouseEnter = (event, id) => {
     setMouseOver(id);
@@ -21,7 +21,8 @@ const DateButtonGroup = ({ buttons, action, buttonType }) => {
         <button
           type={buttonType}
           key={i}
-          name={buttonLabel}
+          name={valueName}
+          value={buttonLabel}
           onMouseEnter={(event) => handleMouseEnter(event, i)}
           onMouseLeave={(event) => handleMouseLeave(event, i)}
           onClick={(event) => handleClick(event, i)}

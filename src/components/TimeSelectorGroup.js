@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useEffect } from "react";
 import "./button.css";
 
 const TimeButtonGroup = ({
@@ -9,13 +10,21 @@ const TimeButtonGroup = ({
   selectedDate,
   selectedLocation,
   availableReservations,
+  valueName,
+  selectedTime,
 }) => {
   const [clickedId, setClickedId] = useState(null);
   const [mouseOver, setMouseOver] = useState(null);
 
+  useEffect(() => {
+    selectedTime === null ? setClickedId(null) : console.log();
+  }, [selectedTime, clickedId]);
+
   const handleClick = (event, id) => {
-    setClickedId(id);
-    action(id);
+    if (availableReservations[selectedDate][selectedLocation][id] === true) {
+      setClickedId(id);
+      action(event, id);
+    }
   };
   const handleMouseEnter = (event, id) => {
     setMouseOver(id);
@@ -30,7 +39,8 @@ const TimeButtonGroup = ({
         <button
           type={buttonType}
           key={i}
-          name={buttonLabel}
+          name={valueName}
+          value={buttonLabel}
           onMouseEnter={(event) => handleMouseEnter(event, i)}
           onMouseLeave={(event) => handleMouseLeave(event, i)}
           //   onClick={(event) => checkAvailable(i)}
@@ -41,20 +51,6 @@ const TimeButtonGroup = ({
               ? alert("Please Select a Location First")
               : handleClick(event, i);
           }}
-          //   className={
-          //     selectedDate === null
-          //       ? "disabledButtonStyle"
-          //       : selectedLocation === null
-          //       ? "disabledButtonStyle"
-          //       : availableReservations[selectedDate][selectedLocation][i] ===
-          //         true
-          //       ? "defaultButtonStyle"
-          //       : i === clickedId
-          //       ? "active"
-          //       : i === mouseOver
-          //       ? "hoverButtonStyle"
-          //       : "defaultButtonStyle"
-          //   }
           className={
             selectedDate === null
               ? "disabledButtonStyle"
@@ -69,13 +65,6 @@ const TimeButtonGroup = ({
               ? "hoverButtonStyle"
               : "defaultButtonStyle"
           }
-          //   className={
-          //     i === clickedId
-          //       ? "active"
-          //       : i === mouseOver
-          //       ? "hoverButtonStyle"
-          //       : "defaultButtonStyle"
-          //   }
         >
           {buttonLabel}
         </button>

@@ -2,12 +2,19 @@ import React from "react";
 import { useState } from "react";
 import "./button.css";
 
-const LocationButtonGroup = ({ buttons, action, buttonType, selectedDate }) => {
+const LocationButtonGroup = ({
+  buttons,
+  action,
+  buttonType,
+  selectedDate,
+  selectedLocation,
+  valueName,
+}) => {
   const [clickedId, setClickedId] = useState(null);
   const [mouseOver, setMouseOver] = useState(null);
   const handleClick = (event, id) => {
     setClickedId(id);
-    action(id);
+    action(event, id);
   };
   const handleMouseEnter = (event, id) => {
     setMouseOver(id);
@@ -21,7 +28,8 @@ const LocationButtonGroup = ({ buttons, action, buttonType, selectedDate }) => {
         <button
           type={buttonType}
           key={i}
-          name={buttonLabel}
+          name={valueName}
+          value={buttonLabel}
           onMouseEnter={(event) => handleMouseEnter(event, i)}
           onMouseLeave={(event) => handleMouseLeave(event, i)}
           onClick={(event) => {
@@ -30,7 +38,9 @@ const LocationButtonGroup = ({ buttons, action, buttonType, selectedDate }) => {
               : handleClick(event, i);
           }}
           className={
-            i === clickedId
+            selectedLocation === null
+              ? "defaultButtonStyle"
+              : i === clickedId
               ? "active"
               : i === mouseOver
               ? "hoverButtonStyle"
